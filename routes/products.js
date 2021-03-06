@@ -31,7 +31,6 @@ router.get('/api', function(req, res, next){
 
 async function clearAll(){
  result = await index.clearObjects().then((res) => {
-  console.log(res);
 }).catch(error => console.log(error));
 }
 
@@ -39,7 +38,6 @@ async function updateIndex(products) {
   result = await index.saveObjects(products, {
     autoGenerateObjectIDIfNotExist: true
   }).catch(error => console.log(error))
-  console.log(result);
   return result;
 }
 
